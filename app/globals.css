@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+html { -webkit-tap-highlight-color: transparent; }
+body {
+  @apply font-kid text-ink antialiased;
+  background-color: #FFF8E7;
+  background-image:
+    radial-gradient(circle at 12px 12px, rgba(108,92,231,0.07) 3px, transparent 4px),
+    radial-gradient(circle at 36px 36px, rgba(255,159,67,0.09) 3px, transparent 4px);
+  background-size: 48px 48px;
+  min-height: 100dvh;
+  overscroll-behavior-y: none;
+  user-select: none;
+}
+input, textarea { user-select: text; }
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-3xl px-6 py-4 text-xl font-extrabold text-white
+      shadow-chunky transition active:translate-y-1 active:shadow-none select-none min-h-[60px];
+  }
+  .btn-accent { @apply bg-accent; }
+  .btn-sun { @apply bg-sun; }
+  .btn-good { @apply bg-good; }
+  .btn-sky { @apply bg-sky; }
+  .btn-ghost { @apply bg-white text-ink border-4 border-ink/15; }
+  .card {
+    @apply rounded-[28px] bg-white border-4 border-ink/10 shadow-chunky p-5;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full bg-white/90 border-2 border-ink/10 px-3 py-1 text-sm font-bold;
+  }
+  .wiggle:hover { animation: bob 0.8s ease-in-out infinite; }
+}
+
+.owl-blink { transform-box: fill-box; transform-origin: center; animation: blink 4s infinite; }
+.tap-pop:active { transform: scale(0.94); }
+.read-on { background: #FFE066; border-radius: 10px; box-shadow: 0 0 0 3px #FFE066; }
