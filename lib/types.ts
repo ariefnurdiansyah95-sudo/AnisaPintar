@@ -34,6 +34,10 @@ export interface Question {
   terima?: string[]
   /** urutan benar untuk soal susun */
   urutan?: string[]
+    /** kepingan pengecoh (tidak dipakai) pada soal susun */
+  pengecoh?: string[]
+  /** kepingan susun adalah huruf/suku kata yang digabung jadi satu kata */
+  gabung?: boolean
   /** pasangan benar untuk soal mencocokkan [kiri, kanan] */
   pasangan?: [string, string][]
   pembahasan: string
